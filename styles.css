@@ -1,0 +1,43 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    -webkit-font-smoothing: antialiased; /* Enables smoother fonts */
+  -moz-osx-font-smoothing: grayscale;  /* For Firefox on macOS */
+
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column; /* Stack items vertically */
+    width: 80%; /* Set the width of the div (80% of viewport) */
+    max-width: 800px; /* Optional: Set a max width for larger screens */
+    margin: 0 auto; /* Center horizontally with auto margins */
+    padding: 0 20px; /* Optional: Add padding for extra space inside the div */
+    height: 100vh; /* Full viewport height */
+  }
+
+h1 {
+color: #0000FF;
+font-size: 20px;
+font-family: Times New Roman;
+font-weight: 400;
+-webkit-font-smoothing: antialised;
+}
+
+ol {
+    color: #000000;
+    font-size: 20px;
+    font-family: Times New Roman;
+    font-weight: 400;
+
+}
+
+p.caption {
+    color: #A2A2A2;
+    font-size: 20px;
+    font-family: Times New Roman;
+    font-weight: 400;
+
+}

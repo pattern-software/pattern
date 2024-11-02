@@ -4,7 +4,7 @@ body {
     justify-content: space-between;
     min-height: 100vh;
     margin: 0;
-    background-color: #070707;
+    background: linear-gradient(116deg, #0c0c0c 0%, #070707 100%);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;

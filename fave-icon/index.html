@@ -4,37 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fave Icon</title>
-    <link id="favicon" rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="/path/to/apple-touch-icon.png">
+    <link id="favicon" rel="icon" href="favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="fave-icon.css">
 </head>
 
 <body>
 <div class="container">
     <div class="header">
-    <h1>Fave Icon</h1>
-    <h2>Preview and test favicons instantly</h2>
+        <h1>Fave Icon</h1>
+        <h2>Preview and test favicons instantly</h2>
     </div>
 
     <div class="button-container">
+        <label class="button-wrapper" for="fileInput">
+            <span class="button-text">Upload</span>
+        </label>
         <input type="file" id="fileInput" accept="image/x-icon,image/png,image/svg+xml" title="">
-        <script>
-            const fileInput = document.getElementById('fileInput');
-            const favicon = document.getElementById('favicon');
-            fileInput.addEventListener('change', (event) => {
-                const file = event.target.files[0];
-                if (file) {
-                    const objectURL = URL.createObjectURL(file);
-                    favicon.href = objectURL;
-                    event.target.value = '';
-                    fileInput.classList.add('replaced');
-                }
-            });
-        </script>
         <p>Supporting png, ico, and svg formats</p>
+    </div>
+
+    <div class="footer">
+        <p class="footer"><a href="https://pattern-software.com" target="_blank">Pattern</a>, 2024</p>
+    </div>
 </div>
-<div class="footer">
-    <p class="footer"><a href="https://pattern-software.com" target="_blank">Pattern</a>, 2024</p>
-</div>
+
+<script>
+    // swap favicon
+    const fileInput = document.getElementById('fileInput');
+    const favicon = document.getElementById('favicon');
+    const buttonText = document.querySelector('.button-text'); // select the button text
+
+    fileInput.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            const objectURL = URL.createObjectURL(file);
+            favicon.href = objectURL;
+            fileInput.classList.add('replaced');
+            buttonText.textContent = 'Replace'; // change button text to replace
+        } else {
+            favicon.href = defaultFavicon; // reset to default if no file is selected
+        }
+    });
+
+    // scale button on tap
+    const buttonWrappers = document.querySelectorAll('.button-wrapper');
+    buttonWrappers.forEach(button => {
+        button.addEventListener('mousedown', () => {
+            button.classList.add('active'); // active class on mouse down
+        });
+        button.addEventListener('mouseup', () => {
+            button.classList.remove('active'); // remove active class on mouse up
+        });
+        button.addEventListener('mouseleave', () => {
+            button.classList.remove('active'); // remove active class if mouse is leaves button
+        });
+    });
+</script>
 </body>
 </html>

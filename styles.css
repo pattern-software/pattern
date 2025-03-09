@@ -143,4 +143,18 @@ ol {
         gap: 0;
         align-self: stretch;
     }
+
+    ol {
+        padding-left: 1.3em;
+        margin-left: 0;
+        list-style-position: outside;
+        font-family: "inter-variable", sans-serif;
+        font-weight: 450;
+        font-size: 1em;
+        line-height: 1.4em;
+        color: #393939;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        letter-spacing: -0.005em;
+    }
 }
